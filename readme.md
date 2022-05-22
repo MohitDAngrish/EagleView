@@ -69,7 +69,7 @@ following the above mentioned blog, we can setup the object detection api and cr
 
 TrainEagle.ipynb contains the training code as well as the inference code(Object Oriented code). 
 
-> **Note:** Choose ipynb, so that it will be easier to see the output of detections in the notebook.
+> **Note:** Choose ipynb, so that it will be easier to see the output of detections in the notebook. The input can be any colored image and output will be image with bounding boxes. No post processing is added as of now, in the interest of time i.e. checking of iou for various boundning boxes for same object and getting rid of them based on probability.
 
 ## Assumptions Vs Reality
 
