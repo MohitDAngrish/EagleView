@@ -75,10 +75,10 @@ TrainEagle.ipynb contains the training code as well as the inference code(Object
 
 * The annotations are not consistent as there are images where human's who are very far or just there hand is visible are tagged as human and in some images the human who are clearly visible aren't tagged. This might confuse the model and untagged labels will be loss even though model was right.
 
--- In the below image we can see very far has been tagged.
+** In the below image we can see very far has been tagged.
 <img width="1440" alt="Screenshot 2022-05-22 at 3 12 01 PM" src="https://user-images.githubusercontent.com/26500540/169689754-61897b0a-fe37-4a85-bf75-24b6c452674f.png">
 
--- In the below image person who are clearly visible are not tagged and a car on the right side is not tagged.
+* In the below image person who are clearly visible are not tagged and a car on the right side is not tagged.
 <img width="1440" alt="Screenshot 2022-05-22 at 3 17 04 PM" src="https://user-images.githubusercontent.com/26500540/169689788-2d7524f6-39ae-45e2-bef9-aa8b68b5db17.png">
 
 -- In the below image the car is tagged which is behind the horse, the car like features are not captured in the annotation. That tag could have been avoided instead of confusing the model. If these kind of samples are corresponds to just 1-5% of the image then it can be overlooked.
