@@ -59,6 +59,8 @@ following the above mentioned blog, we can setup the object detection api and cr
 - Combining the new backbone and BiFPN, they develop a small-size EfficientDet-D0 baseline, and then apply a compound scaling to obtain EfficientDet-D1 to D7 to achieve better accuracy and efficiency trade-offs.
 - Here we have used D2 to achieve good mAP at resonable speed.
 
+![image1](https://user-images.githubusercontent.com/26500540/169695975-696408ff-a82a-4201-b099-0977c3d1d819.png)
+
 ## Metric
 
 -   **Mean Average Precision(mAP)** is the current benchmark metric used by the computer vision research community to evaluate the robustness of object detection models.
