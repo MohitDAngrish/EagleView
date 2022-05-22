@@ -50,6 +50,15 @@ https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/instal
 
 following the above mentioned blog, we can setup the object detection api and create train.tfrecord and test.tfrecord which will be used for training of the model itself.
 
+### Model
+
+**EfficientDet Model** :
+
+- It uses EfficientNet backbone that extracts features from the given image.
+- It uses Bi-FPN which incorporates the multi-level feature fusion idea from FPN/PANet/NAS-FPN that enables information to flow in both the top-down and bottom-up directions, while using regular and efficient connections. 
+- Combining the new backbone and BiFPN, they develop a small-size EfficientDet-D0 baseline, and then apply a compound scaling to obtain EfficientDet-D1 to D7 to achieve better accuracy and efficiency trade-offs.
+- Here we have used D2 to achieve good mAP at resonable speed.
+
 ## Metric
 
 -   **Mean Average Precision(mAP)** is the current benchmark metric used by the computer vision research community to evaluate the robustness of object detection models.
