@@ -100,7 +100,7 @@ TrainEagle.ipynb contains the training code as well as the inference code(Object
 
 * We can use https://github.com/rafaelpadilla/Object-Detection-Metrics repository to calculate the number of true positives, false positives and average presion for each object(person or car) for each threshold.
 
-* Based on business requirement we can decide the higher threshold based on the values we get, to get rid of false positives. 
+* Based on business requirement we can decide the higher threshold for a particular label, to get rid of false positives. 
 
 ## True Positives
 
