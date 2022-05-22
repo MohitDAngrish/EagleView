@@ -82,6 +82,36 @@ TrainEagle.ipynb contains the training code as well as the inference code(Object
 
 > **Note:** Choose ipynb, so that it will be easier to see the output of detections in the notebook. The input can be any colored image and output will be image with bounding boxes. No post processing is added as of now, in the interest of time i.e. checking of iou for various boundning boxes for same object and getting rid of them based on probability.
 
+## False Positives
+
+- In the below image a van is detected as car, which is one of the possible case.
+
+![download](https://user-images.githubusercontent.com/26500540/169701927-720314dd-528d-44b1-bcf3-053cef784fd7.png)
+
+- In the below image a car's back portion is detected as person, which is not acceptable case.
+
+![download (1)](https://user-images.githubusercontent.com/26500540/169701976-e99fb92f-8e64-43d2-9492-7a36705bea0b.png)
+
+- In the below image a dog is detected as human, which is not acceptable case.
+
+![download (3)](https://user-images.githubusercontent.com/26500540/169702151-69af0b68-76ee-4d82-9017-90c363fd72b0.png)
+
+### To deal with false positive post training:
+
+* We can use https://github.com/rafaelpadilla/Object-Detection-Metrics repository to calculate the number of true positives, false positives and average presion for each object(person or car) for each threshold.
+
+* Based on business requirement we can decide the higher threshold based on the values we get, to get rid of false positives. 
+
+## True Positives
+
+![download (6)](https://user-images.githubusercontent.com/26500540/169703271-3897d331-7e2e-45a8-bafe-15e69f142c27.png)
+
+![download (7)](https://user-images.githubusercontent.com/26500540/169703306-80e6514a-00a9-4a2d-b9dc-e6cc8e3e3bac.png)
+
+![download (8)](https://user-images.githubusercontent.com/26500540/169703314-a72842ac-86a2-4660-b771-eba3e6f1ab4b.png)
+
+![download (5)](https://user-images.githubusercontent.com/26500540/169703334-24b56429-f3c2-410b-b694-ba30044b9e0e.png)
+
 ## Assumptions Vs Reality
 
 * The annotations are not consistent as there are images where human's who are very far or just there hand is visible are tagged as human and in some images the human who are clearly visible aren't tagged. This might confuse the model and untagged labels will be loss even though model was right.
@@ -105,3 +135,17 @@ TrainEagle.ipynb contains the training code as well as the inference code(Object
 
 * In this image many cars are clearly visible, but just one is annotated.
 <img width="1440" alt="Screenshot 2022-05-22 at 3 44 14 PM" src="https://user-images.githubusercontent.com/26500540/169689998-c0d8cbaf-2a34-4d60-8053-8ad5da81944a.png">
+
+* In this image a stick drawing is annotated as person.
+
+<img width="1440" alt="Screenshot 2022-05-22 at 9 11 43 PM" src="https://user-images.githubusercontent.com/26500540/169703449-a9a394be-5cea-4abd-84c2-d094f996ae10.png">
+
+## Conclusion : 
+
+* The model which we have is performing fairly well on the given dataset with the **mAP@0.5 : 63.85**
+
+## Recommendation :
+
+* The annotation must be kept consistent.
+
+* There are instances where very small boudning boxs are drawn for car or person, we can decide a threshold of IOU of an object with respect to image, if the IOU is less than that threshold then we should get rid of the bounding box as it might correspond to object being very far and its features might not properly be learned or only a part of the object is tagged, like in person if just hand or just legs or just the clothes are visible as the person is standing behind a car. 
