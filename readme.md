@@ -75,9 +75,22 @@ TrainEagle.ipynb contains the training code as well as the inference code(Object
 
 * The annotations are not consistent as there are images where human's who are very far or just there hand is visible are tagged as human and in some images the human who are clearly visible aren't tagged. This might confuse the model and untagged labels will be loss even though model was right.
 
+-- In the below image we can see very far has been tagged.
+<img width="1440" alt="Screenshot 2022-05-22 at 3 12 01 PM" src="https://user-images.githubusercontent.com/26500540/169689754-61897b0a-fe37-4a85-bf75-24b6c452674f.png">
 
+-- In the below image person who are clearly visible are not tagged and a car on the right side is not tagged.
+<img width="1440" alt="Screenshot 2022-05-22 at 3 17 04 PM" src="https://user-images.githubusercontent.com/26500540/169689788-2d7524f6-39ae-45e2-bef9-aa8b68b5db17.png">
 
+-- In the below image the car is tagged which is behind the horse, the car like features are not captured in the annotation. That tag could have been avoided instead of confusing the model. If these kind of samples are corresponds to just 1-5% of the image then it can be overlooked.
+<img width="1440" alt="Screenshot 2022-05-22 at 3 41 25 PM" src="https://user-images.githubusercontent.com/26500540/169689815-503d3097-f009-4589-808e-294a370fa1b6.png">
 
+-- In one image the vehicle is considered as car and in other it is not.
 
+<img width="1440" alt="Screenshot 2022-05-22 at 3 42 07 PM" src="https://user-images.githubusercontent.com/26500540/169689934-fa1581e2-aa12-4ba9-b5f6-00918de5afab.png">
+<img width="1440" alt="Screenshot 2022-05-22 at 3 42 28 PM" src="https://user-images.githubusercontent.com/26500540/169689940-be301495-e173-487c-b280-5f92747b69ad.png">
 
+-- In the below image only 2 cars is clearly visible but 4 are tagged.
+<img width="1440" alt="Screenshot 2022-05-22 at 3 44 09 PM" src="https://user-images.githubusercontent.com/26500540/169689985-efe3b1da-c298-42bb-8d8b-60bc8ddde34d.png">
 
+-- In this image many cars are clearly visible, but just one is annotated.
+<img width="1440" alt="Screenshot 2022-05-22 at 3 44 14 PM" src="https://user-images.githubusercontent.com/26500540/169689998-c0d8cbaf-2a34-4d60-8053-8ad5da81944a.png">
